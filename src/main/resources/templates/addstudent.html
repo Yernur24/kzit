@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.min.css'}">
+    <script type="text/javascript" th:src="@{'/js/bootstrap.bundle.js'}"></script>
+    <title>add</title>
+</head>
+<body>
+<div class="container fluid">
+    <div th:insert="navbar.html">
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <form action="/addstudent" method="post">
+                <div class="row">
+                    <div class="col-12">
+                        <label>NAME:</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="name" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>SURNAME:</label>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="surname" placeholder="Surname" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>EXAM:</label>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <input type="number" class="form-control" name="exam" placeholder="Exam" required>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <button class="btn btn-success">ADD STUDENT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

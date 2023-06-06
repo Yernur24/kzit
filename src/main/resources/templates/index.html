@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.min.css'}">
+    <script type="text/javascript" th:src="@{'/js/bootstrap.bundle.js'}"></script>
+    <title>Home</title>
+</head>
+<body>
+<div class="container fluid">
+    <div th:insert="navbar.html">
+
+    </div>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SURNAME</th>
+                    <th>EXAM</th>
+                    <th>MARK</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="stud:${studentter} " th:style="${stud.exam < 50? 'color:red' : ''}"  >
+                    <td th:text="${stud.id}"></td>
+                    <td th:text="${stud.name}"></td>
+                    <td th:text="${stud.surname}"></td>
+                    <td th:text="${stud.exam}"></td>
+                    <td th:text="${stud.mark}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
